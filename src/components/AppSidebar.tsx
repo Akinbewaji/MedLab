@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import {
   Users,
   ClipboardList,
@@ -23,6 +23,7 @@ const navItems = [
 export function AppSidebar() {
   const [collapsed, setCollapsed] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   return (
     <aside
@@ -60,7 +61,9 @@ export function AppSidebar() {
                   : "text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
               }`}
             >
-              <item.icon className={`h-5 w-5 shrink-0 ${isActive ? "text-primary" : ""}`} />
+              <item.icon
+                className={`h-5 w-5 shrink-0 ${isActive ? "text-primary" : ""}`}
+              />
               {!collapsed && <span>{item.title}</span>}
             </NavLink>
           );
@@ -69,7 +72,10 @@ export function AppSidebar() {
 
       {/* Log out */}
       <div className="px-2 pb-4">
-        <button className="flex items-center gap-3 px-3 py-3 rounded-lg text-sm font-medium text-primary hover:bg-accent transition-colors w-full">
+        <button
+          onClick={() => navigate("/logout-confirm")}
+          className="flex items-center gap-3 px-3 py-3 rounded-lg text-sm font-medium text-primary hover:bg-accent transition-colors w-full"
+        >
           <LogOut className="h-5 w-5 shrink-0" />
           {!collapsed && <span>Log out</span>}
         </button>
