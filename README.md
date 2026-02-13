@@ -2,7 +2,11 @@
 
 ## Project info
 
+<<<<<<< HEAD
 **URL**: https://med-lab-rose.vercel.app/
+=======
+**URL**: med-lab-rose.vercel.app
+>>>>>>> 53efdacbf0ef3bb6a90ae83a588002efc0bfe18b
 
 ## How can I edit this code?
 
@@ -54,3 +58,7 @@ This project is built with:
 - shadcn-ui
 - Tailwind CSS
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 53efdacbf0ef3bb6a90ae83a588002efc0bfe18b
