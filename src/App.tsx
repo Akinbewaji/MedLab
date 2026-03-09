@@ -13,6 +13,9 @@ import NotFound from "./pages/NotFound";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import LogoutConfirm from "./pages/LogoutConfirm";
+import Dashboard from "./pages/Dashboard";
+import Insights from "./pages/Insights";
+import NewService from "./pages/NewService";
 
 const queryClient = new QueryClient();
 
@@ -31,11 +34,14 @@ const App = () => (
             element={
               <DashboardLayout>
                 <Routes>
-                  <Route path="/" element={<Index />} />
+                  <Route path="/" element={<Dashboard />} />
+                  <Route path="/register" element={<Index />} />
                   <Route path="/services" element={<Services />} />
+                  <Route path="/services/new" element={<NewService />} />
                   <Route path="/patients" element={<Patients />} />
                   <Route path="/hospitals" element={<Hospitals />} />
                   <Route path="/accounts" element={<Accounts />} />
+                  <Route path="/insights" element={<Insights />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
               </DashboardLayout>

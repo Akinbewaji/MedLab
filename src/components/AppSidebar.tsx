@@ -10,14 +10,18 @@ import {
   Menu,
   X,
   Microscope,
+  LayoutDashboard,
+  BarChart3,
 } from "lucide-react";
 
 const navItems = [
-  { title: "Register", path: "/", icon: UserPlus },
+  { title: "Dashboard", path: "/", icon: LayoutDashboard },
+  { title: "Register", path: "/register", icon: UserPlus },
   { title: "Services", path: "/services", icon: ClipboardList },
   { title: "Patients", path: "/patients", icon: Users },
   { title: "Hospitals", path: "/hospitals", icon: Building2 },
   { title: "Accounts", path: "/accounts", icon: Wallet },
+  { title: "Insights", path: "/insights", icon: BarChart3 },
 ];
 
 export function AppSidebar() {

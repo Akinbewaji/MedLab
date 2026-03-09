@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Search, Plus, MoreVertical, Trash2 } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 const mockServices = [
   { id: 1, name: "Malaria", price: 4000, updatedAt: "12/19/2025" },
@@ -10,6 +11,7 @@ const mockServices = [
 ];
 
 const Services = () => {
+  const navigate = useNavigate();
   const [search, setSearch] = useState("");
   const filtered = mockServices.filter((s) =>
     s.name.toLowerCase().includes(search.toLowerCase())
@@ -32,7 +34,10 @@ const Services = () => {
             className="pl-9 bg-card"
           />
         </div>
-        <Button className="bg-destructive/80 text-destructive-foreground hover:bg-destructive gap-2">
+        <Button 
+          onClick={() => navigate("/services/new")}
+          className="bg-destructive/80 text-destructive-foreground hover:bg-destructive gap-2"
+        >
           <Plus className="h-4 w-4" />
           New service
         </Button>
